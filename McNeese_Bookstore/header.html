@@ -1,0 +1,59 @@
+<!--
+    HTML file for the McNeese Bookstore header
+    Author: Ethan Campbell
+    Created On: 3/4/2024
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>McNeese Bookstore</title>
+        <link rel="stylesheet" href="style.css"> <!--Link to CSS file-->
+    </head>
+
+    <body>
+        <!--Header-->
+        <div class="header-container">
+            <img src="Images/Logo.png" alt="McNeese" id="mcneese-logo-top"> <!--Mcneese logo-->
+
+            <!--Search bar-->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Enter Title, ISBN, Author, or Product Name">
+                <div class="search-icon"></div>
+            </div>
+
+            <!--Sign in button-->
+            <a href="signin.html" id="sign-in">
+                <div class="sign-in-button">
+                    <button>Sign In
+                        <img id="signinImage" src="Images/SignIn.png" alt="Sign In">
+                    </button>
+                </div>
+            </a>
+
+            <!--Cart button-->
+            <a href="signin.html" id="cart">
+                <div class="cart-button">
+                    <button>Cart
+                        <img id="cartImage" src="Images/ShoppingCart.png" alt="Shopping Cart">
+                    </button>
+                </div>
+            </a>
+        </div>
+
+        <!--Navigation bar-->
+        <nav>
+            <ul class="nav-bar1">
+                <li><a href="#" onclick="showHomePage()">Home</a></li> <!--When clicked, shows the home page-->
+                <li><a href="#" onclick="showSalePage()">Sale</a></li> <!--When clicked, shows the sale page-->
+                <li><a href="#" onclick="showOfficeSuppliesPage()">Office Supplies</a></li> <!--When clicked, shows the office supplies page-->
+                <li><a href="#" onclick="showTextbooksPage()">Textbooks</a></li> <!--When clicked, shows the textbooks page-->
+                <li><a href="#" onclick="showAboutUsPage()">About Us</a></li> <!--When clicked, shows the about us page-->
+                <li><a href="#" onclick="showContactPage()">Contact</a></li> <!--When clicked, shows the contact page-->
+            </ul>
+        </nav>
+        <script src="navbar.js" defer></script> <!--Link to javascript file-->
+    </body>
+</html>

@@ -1,5 +1,5 @@
 /*
-CSS stylesheet for McNeese Online bookstore main page
+CSS stylesheet for McNeese Online bookstore
 Author: Ethan Campbell
 Created On: 2/13/2024
 */
@@ -148,7 +148,7 @@ nav {
 
 .book-container {
     text-align: center; /*Align the text to the center*/
-    background-color: #fff;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
