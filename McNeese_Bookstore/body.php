@@ -32,7 +32,7 @@
                     foreach($books as $book) {
                 ?>
                 <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
+                    <img src="Images/Microeconomics.jpg" alt="Book Cover" class="book-cover">
                     <h2><?php echo $book["Title"]; ?></h2>
                     <p><?php echo $book["Author"]; ?></p>
                     <p><?php echo '$' . $book["Price"]; ?></p>
