@@ -28,53 +28,51 @@
             <!--Display books-->
             <div class="row-of-books">
                 <?php
-                    include("selectbook.php");
-                    foreach($books as $book) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/Microeconomics.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $book["Title"]; ?></h2>
-                    <p><?php echo $book["Author"]; ?></p>
-                    <p><?php echo '$' . $book["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                include("connectdatabase.php");
+                foreach ($books_new_arrivals as $book) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
+                        <p><?php echo htmlspecialchars($book["Author"]); ?></p>
+                        <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
 
             <h2>Best Sellers</h2>
-            <!--Display books-->
+            <!-- Display books -->
             <div class="row-of-books">
                 <?php
-                    include("selectbook.php");
-                    foreach($books as $book) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $book["Title"]; ?></h2>
-                    <p><?php echo $book["Author"]; ?></p>
-                    <p><?php echo '$' . $book["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                foreach ($books_best_sellers as $book) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
+                        <p><?php echo htmlspecialchars($book["Author"]); ?></p>
+                        <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
-                    
+
             <h2>Special Offers</h2>
-            <!--Display books-->
+            <!-- Display books -->
             <div class="row-of-books">
                 <?php
-                    include("selectbook.php");
-                    foreach($books as $book) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $book["Title"]; ?></h2>
-                    <p><?php echo $book["Author"]; ?></p>
-                    <p><?php echo '$' . $book["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                foreach ($books_special_offers as $book) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
+                        <p><?php echo htmlspecialchars($book["Author"]); ?></p>
+                        <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
         </div>
@@ -86,53 +84,34 @@
             <!--Display books-->
             <div class="row-of-books">
                 <?php
-                    include("selectbook.php");
-                    foreach($books as $book) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $book["Title"]; ?></h2>
-                    <p><?php echo $book["Author"]; ?></p>
-                    <p><?php echo '$' . $book["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                include("connectdatabase.php");
+                foreach ($books_sale as $book) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo $book["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo $book["Title"]; ?></h2>
+                        <p><?php echo $book["Author"]; ?></p>
+                        <p><?php echo '$' . $book["Price"]; ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
 
             <h2>Office Supplies on Sale</h2>
-            <!--Display books-->
+            <!-- Display books -->
             <div class="row-of-books">
                 <?php
-                    include("selectbook.php");
-                    foreach($books as $book) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $book["Title"]; ?></h2>
-                    <p><?php echo $book["Author"]; ?></p>
-                    <p><?php echo '$' . $book["Price"]; ?></p>
-                </div>
-                <?php
-                    }
-                ?>
-            </div>
-
-            <h2>Merchandise on Sale</h2>
-            <!--Display books-->
-            <div class="row-of-books">
-                <?php
-                    include("selectbook.php");
-                    foreach($books as $book) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $book["Title"]; ?></h2>
-                    <p><?php echo $book["Author"]; ?></p>
-                    <p><?php echo '$' . $book["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                foreach ($office_supplies_sale as $officesupply) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo $officesupply["Brand"]; ?></h2>
+                        <p><?php echo $officesupply["Name"]; ?></p>
+                        <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
         </div>
@@ -144,53 +123,51 @@
             <!--Display Office Supplies-->
             <div class="row-of-books">
                 <?php
-                    include("selectofficesupply.php");
-                    foreach($officesupplies as $officesupply) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $officesupply["Brand"]; ?></h2>
-                    <p><?php echo $officesupply["Name"]; ?></p>
-                    <p><?php echo '$' . $officesupply["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                include("connectdatabase.php");
+                foreach ($office_supplies_calculators as $officesupply) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo $officesupply["Brand"]; ?></h2>
+                        <p><?php echo $officesupply["Name"]; ?></p>
+                        <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
 
             <h2>Staplers and Staples</h2>
-            <!--Display Office Supplies-->
+            <!-- Display Office Supplies -->
             <div class="row-of-books">
                 <?php
-                    include("selectofficesupply.php");
-                    foreach($officesupplies as $officesupply) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $officesupply["Brand"]; ?></h2>
-                    <p><?php echo $officesupply["Name"]; ?></p>
-                    <p><?php echo '$' . $officesupply["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                foreach ($office_supplies_staplers as $officesupply) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo $officesupply["Brand"]; ?></h2>
+                        <p><?php echo $officesupply["Name"]; ?></p>
+                        <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
 
             <h2>Notebooks and Paper</h2>
-            <!--Display Office Supplies-->
+            <!-- Display Office Supplies -->
             <div class="row-of-books">
                 <?php
-                    include("selectofficesupply.php");
-                    foreach($officesupplies as $officesupply) {
-                ?>
-                <div class="book-container">
-                    <img src="Images/IntroToPsych.jpg" alt="Book Cover" class="book-cover">
-                    <h2><?php echo $officesupply["Brand"]; ?></h2>
-                    <p><?php echo $officesupply["Name"]; ?></p>
-                    <p><?php echo '$' . $officesupply["Price"]; ?></p>
-                </div>
-                <?php
-                    }
+                foreach ($office_supplies_notebooks as $officesupply) {
+                    ?>
+                    <div class="book-container">
+                        <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
+                        <h2><?php echo $officesupply["Brand"]; ?></h2>
+                        <p><?php echo $officesupply["Name"]; ?></p>
+                        <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
         </div>
@@ -246,7 +223,7 @@
                     <input type="text" class="search-course" placeholder="Course-Section-Instructor">
                 </div>
             </div>
-        </div>
+        </div> 
 
         <!--About Us page. Hidden until the about us section is clicked on the nav bar-->
         <div id="aboutUsPage" style="display: none;">

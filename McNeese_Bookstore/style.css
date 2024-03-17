@@ -144,7 +144,7 @@ nav {
 .row-of-books {
     display: flex;
     gap: 20px;
-}
+} 
 
 .book-container {
     text-align: center; /*Align the text to the center*/
@@ -171,7 +171,7 @@ footer {
 
 .footer-container {
     display: flex;
-}
+} 
 
 .store-hours {
     margin-right: auto;
