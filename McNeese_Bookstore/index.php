@@ -1,11 +1,10 @@
-<!--
-    Index PHP file that displays header, body and footer
+<?php
+/*
+    PHP index file that displays the webpage
     Author: Ethan Campbell
     Created On: 3/4/2024
--->
-<!DOCTYPE html>
-<html>
-    <?php include("header.html"); //display header ?>
-    <?php include("body.php"); //display body ?>
-    <?php include("footer.html"); //display footer ?>
-</html>
+*/
+    include("header.html"); //display header
+    include("body.php"); //display body
+    include("footer.html"); //display footer
+?>

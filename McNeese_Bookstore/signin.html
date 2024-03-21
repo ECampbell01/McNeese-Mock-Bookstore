@@ -1,7 +1,7 @@
 <!--
     TechTitans
     McNeese Online Bookstore Sign in page
-    Author: Ethan Campbell
+    Author: Jett Rogers
     Created On: 2/18/2024
 -->
 
@@ -13,13 +13,19 @@
     <link rel="stylesheet" href="signin_style.css">
 </head>
 <body>
-    <h1>Sign In</h1>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+	<div class="main">
+		<h1>McNeese Bookstore</h1>
+		<h3>Sign In</h3>
+		<form action="">
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" placeholder="Enter your Email" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" placeholder="Enter your Password" required>
 
-        <button type="submit">Submit</button>
+			<button type="submit">Submit</button>
+		</form>
+        <p>Not Registered? <a href="">Create an Account</a></p>
+	</div>
 </body>
 </html>

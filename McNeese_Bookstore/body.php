@@ -17,6 +17,20 @@
                 height: 100px;
                 border: 5px solid #ccc;
             }
+
+            .row-of-books {
+                display: flex;
+                gap: 20px;
+            } 
+
+            .book-container {
+                text-align: center; /*Align the text to the center*/
+                background-color: white;
+                padding: 20px;
+                max-width: 250px; 
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
         </style>
     </head>
 
