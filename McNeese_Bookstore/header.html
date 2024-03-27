@@ -20,8 +20,10 @@
 
             <!--Search bar-->
             <div class="search-container">
-                <input type="text" class="search-input" placeholder="Enter Title, ISBN, Author, or Product Name">
-                <div class="search-icon"></div>
+                <form action="search.php" method="POST">
+                    <input type="text" name="search" class="search-input" placeholder="Enter Title, ISBN, Author, or Product Name">
+                    <input type="submit" name="submit" value="Search" class="search-icon">
+                </form>
             </div>
 
             <!--Sign in button-->

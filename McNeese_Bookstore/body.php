@@ -91,6 +91,11 @@
             </div>
         </div>
 
+        <!-- Search results will be displayed here -->
+        <div class="search-results">
+            <?php include("search.php"); ?>
+        </div>
+
         <!--Sale page. Hidden until the sale section is clicked on the nav bar-->
         <div id="salePage" style="display: none;">
 

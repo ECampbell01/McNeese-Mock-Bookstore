@@ -88,3 +88,22 @@ VALUES
     (23, 'Financial Accounting', 'Robert Libby, Patricia Libby, Daniel G. Short', '978-1260247875', 3, 0, 110.0000, 'FinancialAccounting.jpg'),
     (24, 'Strategic Management: Concepts and Cases', 'Fred R. David, Forest R. David', '978-0134167848', 1, 10, 140.0000, 'StrategicManagement.jpg'),
     (25, 'Communication in Everyday Life', 'Steve Duck, David T. McMahan', '978-1319059678', 1, 10, 90.0000, 'Communication.jpg');
+
+--Insert customer data
+INSERT INTO Customer(Name, Address, Username, Password)
+VALUES
+('Jett Rogers', '5013 Joe Dumar Dr', 'jrogers12@mcneese.edu', 'Password'),
+('Sarah Johnson', '123 Magnolia Street, Baton Rouge, LA, USA', 'sarah_123@mcneese.edu', 'Password'),
+('John Smith', '456 Cypress Avenue, New Orleans, LA, USA', 'jsmith456@mcneese.edu', 'Password'),
+('Emily Davis', '789 Bayou Road, Lafayette, LA, USA', 'emilydavis22@mcneese.edu', 'Password'),
+('Michael Brown', '101 Oak Lane, Shreveport, LA, USA', 'mbrown101@mcneese.edu', 'Password'),
+('Jessica Martinez', '222 River Street, Lake Charles, LA, USA', 'jess_martinez@mcneese.edu', 'Password'),
+('David Wilson', '333 Creole Drive, Alexandria, LA, USA', 'dwilson33@mcneese.edu', 'Password'),
+('Samantha Taylor', '444 Pelican Avenue, Monroe, LA, USA', 'sam_taylor444@mcneese.edu', 'Password'),
+('Christopher Lee', '555 Delta Drive, Bossier City, LA, USA', 'chris_lee555@mcneese.edu', 'Password'),
+('Olivia Garcia', '678 Swamp Lane, Houma, LA, USA', 'olivia_garcia678@mcneese.edu', 'Password'),
+('Daniel Rodriguez', '777 French Quarter Court, Metairie, LA, USA', 'drodriguez777@mcneese.edu', 'Password'),
+('Amanda Nguyen', '888 Oakwood Drive, Kenner, LA, USA', 'amanda_nguyen88@mcneese.edu', 'Password'),
+('Matthew Sullivan', '999 Magnolia Lane, Hammond, LA, USA', 'matt_sullivan999@mcneese.edu', 'Password'),
+('Ashley Thompson', '111 Crescent Road, Slidell, LA, USA', 'ash_thompson111@mcneese.edu', 'Password'),
+('Ryan Hernandez', '222 Bayou Avenue, Ruston, LA, USA', 'ryan_hernandez22@mcneese.edu', 'Password');
