@@ -16,5 +16,9 @@
             $_SESSION['loggedin'] = true;
             echo "Welcome Back";
         }
+        else
+        {
+            echo "Incorrect Email or Password"
+        }
     }
 ?>
