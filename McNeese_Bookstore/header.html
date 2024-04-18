@@ -11,6 +11,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>McNeese Bookstore</title>
         <link rel="stylesheet" href="style.css"> <!--Link to CSS file-->
+        <style>
+            .header-container {
+                display: flex;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .search-container {
+                position: relative;
+                width: 700px;
+                margin: 20px;
+                overflow: hidden; /* Hide the overflowing content */
+            }
+
+            .search-input-container {
+                display: flex;
+                align-items: center;
+            }
+
+            .search-input {
+                flex: 1; /* Take remaining space */
+                padding: 10px;
+                box-sizing: border-box;
+                border-radius: 30px;
+                margin-right: 5px; /* Add some spacing between input and button */
+            }
+
+            .search-icon {
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+                background: url('Images/MagnifyingGlass.png') no-repeat center center; 
+                background-size: contain; 
+                border: none; /* Remove default button styles */
+                padding: 0; /* Remove default padding */
+                text-indent: -9999px; /* Move the text off-screen */
+            }
+        </style>
     </head>
 
     <body>
@@ -18,11 +56,12 @@
         <div class="header-container">
             <img src="Images/Logo.png" alt="McNeese" id="mcneese-logo-top"> <!--Mcneese logo-->
 
-            <!--Search bar-->
             <div class="search-container">
                 <form action="search.php" method="POST">
-                    <input type="text" name="search" class="search-input" placeholder="Enter Title, ISBN, Author, or Product Name">
-                    <input type="submit" name="submit" value="Search" class="search-icon">
+                    <div class="search-input-container">
+                        <input type="text" name="search" class="search-input" placeholder="Enter Title, ISBN, Author, or Product Name">
+                        <input type="submit" name="submit" value="Search" class="search-icon">
+                    </div>
                 </form>
             </div>
 
@@ -36,7 +75,7 @@
             </a>
 
             <!--Cart button-->
-            <a href="signin.html" id="cart">
+            <a href="cart.html" id="cart">
                 <div class="cart-button">
                     <button>Cart
                         <img id="cartImage" src="Images/ShoppingCart.png" alt="Shopping Cart">
@@ -51,7 +90,7 @@
                 <li><a href="#" onclick="showHomePage()">Home</a></li> <!--When clicked, shows the home page-->
                 <li><a href="#" onclick="showSalePage()">Sale</a></li> <!--When clicked, shows the sale page-->
                 <li><a href="#" onclick="showOfficeSuppliesPage()">Office Supplies</a></li> <!--When clicked, shows the office supplies page-->
-                <li><a href="#" onclick="showTextbooksPage()">Textbooks</a></li> <!--When clicked, shows the textbooks page-->
+                <li><a href="#" onclick="showTextbooksPage()">Textbooks</a></li> <!--When clicked, shows the textbooks page -->
                 <li><a href="#" onclick="showAboutUsPage()">About Us</a></li> <!--When clicked, shows the about us page-->
                 <li><a href="#" onclick="showContactPage()">Contact</a></li> <!--When clicked, shows the contact page-->
             </ul>

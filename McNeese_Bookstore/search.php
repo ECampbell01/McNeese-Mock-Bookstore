@@ -11,6 +11,7 @@ $db_password = "";
 $db_name = "mcNeeseBookstore";
 $conn = mysqli_connect($db_server, $db_username, $db_password, $db_name);
 
+//check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -21,16 +22,25 @@ if (isset($_POST["submit"])) {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
+        include "header.html"; //display header
+
+        //display search results
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='search-results'>
                 <h3>".$row['Title']."</h3>
                 <p>".$row['Author']."</p>
             </div>";
         }
-    } else {
+
+        include "footer.html"; //display footer
+    }
+
+    else {
+        include "header.html"; //display header
         echo "There are no results matching your search!";
+        include "footer.html"; //display footer
     }
 }
 
-mysqli_close($conn);
+mysqli_close($conn); //close connection
 ?>

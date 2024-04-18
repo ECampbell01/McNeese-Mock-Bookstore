@@ -9,18 +9,15 @@
     $db_username = "root"; //username
     $db_password = ""; //password
     $db_name = "mcNeeseBookstore"; //name of database
-    $conn = "";
+    $conn = new mysqli($db_server, $db_username, $db_password, $db_name);
 
-    //Testing the connection to the database
-    try{
-        $conn = mysqli_connect($db_server,
-                               $db_username,
-                               $db_password,
-                               $db_name);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-    catch (mysqli_sql_exception $e) {
-        echo "Could not connect to database! <br>";
-    }
+
+    // Set charset to UTF-8
+    $conn->set_charset("utf8");
 
     //Retrieve data from office supplies table
     $office_supplies_calculators = array();
@@ -66,7 +63,7 @@
     $books_special_offers = array();
     $books_sale = array();
 
-    $sql_new_arrivals = "SELECT Title, Author, Price, PhotoFilePath FROM Book WHERE BookID BETWEEN 1 AND 5";
+    $sql_new_arrivals = "SELECT BookId, Title, Author, Price, PhotoFilePath FROM Book WHERE BookID BETWEEN 1 AND 5";
     $result_new_arrivals = mysqli_query($conn, $sql_new_arrivals);
     if (mysqli_num_rows($result_new_arrivals) > 0) {
         while ($row = mysqli_fetch_assoc($result_new_arrivals)) {
@@ -97,6 +94,4 @@
             $books_sale[] = $row;
         }
     }
-    
-    mysqli_close($conn); //Close the connection
 ?>
