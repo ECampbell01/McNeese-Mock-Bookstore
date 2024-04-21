@@ -1,8 +1,3 @@
-<!--
-    PHP file for the Create an account function
-    Author: Jett Rogers
-    Created On: 4/18/2024
--->
 <?php 
     include("connectdatabase.php");
 
