@@ -43,69 +43,53 @@
             }
         </style>
     </head>
-
     <body>
+        <?php include("connectdatabase.php"); ?>
         <!--Home Page-->
         <div id="homePage">
-
             <h2>New Arrivals</h2>
             <!--Display books-->
             <div class="row-of-books">
-                <?php
-                    include("connectdatabase.php");
-                    foreach ($books_new_arrivals as $book) {
-                ?>
-                <a href="bookdetails.php?id=<?php echo htmlspecialchars($book["BookId"]); ?>" class="book-link">
-                    <div class="book-container">
-                        <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
-                        <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
-                        <p><?php echo htmlspecialchars($book["Author"]); ?></p>
-                        <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
-                    </div>
-                </a>
-                <?php
-                    }
-                ?>
+                <?php foreach (array_slice($books, 0, 5) as $book): ?>
+                    <a href="bookdetails.php?id=<?php echo htmlspecialchars($book["BookId"]); ?>" class="book-link">
+                        <div class="book-container">
+                            <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                            <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
+                            <p><?php echo htmlspecialchars($book["Author"]); ?></p>
+                            <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
 
             <h2>Best Sellers</h2>
             <!-- Display books -->
             <div class="row-of-books">
-                <?php
-                    include("connectdatabase.php");
-                    foreach ($books_best_sellers as $book) {
-                ?>
-                <a href="bookdetails.php?id=<?php echo htmlspecialchars($book["BookId"]); ?>" class="book-link">
-                    <div class="book-container">
-                        <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
-                        <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
-                        <p><?php echo htmlspecialchars($book["Author"]); ?></p>
-                        <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
-                    </div>
-                </a>
-                <?php
-                    }
-                ?>
+                <?php foreach (array_slice($books, 5, 5) as $book): ?>
+                    <a href="bookdetails.php?id=<?php echo htmlspecialchars($book["BookId"]); ?>" class="book-link">
+                        <div class="book-container">
+                            <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                            <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
+                            <p><?php echo htmlspecialchars($book["Author"]); ?></p>
+                            <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
 
             <h2>Special Offers</h2>
             <!-- Display books -->
             <div class="row-of-books">
-                <?php
-                    include("connectdatabase.php");
-                    foreach ($books_special_offers as $book) {
-                ?>
-                <a href="bookdetails.html" class="book-link">
-                    <div class="book-container">
-                        <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
-                        <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
-                        <p><?php echo htmlspecialchars($book["Author"]); ?></p>
-                        <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
-                    </div>
-                </a>
-                <?php
-                    }
-                ?>
+                <?php foreach (array_slice($books, 10, 5) as $book): ?>
+                    <a href="bookdetails.php?id=<?php echo htmlspecialchars($book["BookId"]); ?>" class="book-link">
+                        <div class="book-container">
+                            <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                            <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
+                            <p><?php echo htmlspecialchars($book["Author"]); ?></p>
+                            <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -115,11 +99,8 @@
             <h2>Textbooks on Sale</h2>
             <!--Display books-->
             <div class="row-of-books">
-                <?php
-                include("connectdatabase.php");
-                foreach ($books_sale as $book) {
-                    ?>
-                    <a href="bookdetails.html" class="book-link">
+                <?php foreach (array_slice($books, 10, 5) as $book): ?>
+                    <a href="bookdetails.php?id=<?php echo htmlspecialchars($book["BookId"]); ?>" class="book-link">
                         <div class="book-container">
                             <img src="Images/<?php echo htmlspecialchars($book["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
                             <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
@@ -127,28 +108,22 @@
                             <p><?php echo '$' . htmlspecialchars($book["Price"]); ?></p>
                         </div>
                     </a>
-                    <?php
-                }
-                ?>
+                <?php endforeach; ?>
             </div>
 
             <h2>Office Supplies on Sale</h2>
             <!-- Display books -->
             <div class="row-of-books">
-                <?php
-                foreach ($office_supplies_sale as $officesupply) {
-                    ?>
-                    <a href="bookdetails.html" class="book-link">
+                <?php foreach (array_slice($office_supplies, 10, 5) as $office_supply): ?>
+                    <a href="officesupplydetails.php?id=<?php echo htmlspecialchars($office_supply["SupplyId"]); ?>" class="book-link">
                         <div class="book-container">
-                            <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
-                            <h2><?php echo $officesupply["Brand"]; ?></h2>
-                            <p><?php echo $officesupply["Name"]; ?></p>
-                            <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                            <img src="Images/<?php echo htmlspecialchars($office_supply["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                            <h2><?php echo htmlspecialchars($office_supply["Name"]); ?></h2>
+                            <p><?php echo htmlspecialchars($office_supply["Brand"]); ?></p>
+                            <p><?php echo '$' . htmlspecialchars($office_supply["Price"]); ?></p>
                         </div>
                     </a>
-                    <?php
-                }
-                ?>
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -158,59 +133,46 @@
             <h2>Calculators</h2>
             <!--Display Office Supplies-->
             <div class="row-of-books">
-                <?php
-                include("connectdatabase.php");
-                foreach ($office_supplies_calculators as $officesupply) {
-                    ?>
-                    <a href="bookdetails.html" class="book-link">
+                <?php foreach (array_slice($office_supplies, 15, 5) as $officesupply): ?>
+                    <a href="officesupplydetails.php?id=<?php echo htmlspecialchars($officesupply["SupplyId"]); ?>" class="book-link">
                         <div class="book-container">
-                            <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
-                            <h2><?php echo $officesupply["Brand"]; ?></h2>
-                            <p><?php echo $officesupply["Name"]; ?></p>
-                            <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                            <img src="Images/<?php echo htmlspecialchars($officesupply["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                            <h2><?php echo htmlspecialchars($officesupply["Name"]); ?></h2>
+                            <p><?php echo htmlspecialchars($officesupply["Brand"]); ?></p>
+                            <p><?php echo '$' . htmlspecialchars($officesupply["Price"]); ?></p>
                         </div>
                     </a>
-                    <?php
-                }
-                ?>
+                <?php endforeach; ?>
             </div>
 
             <h2>Staplers and Staples</h2>
             <!-- Display Office Supplies -->
             <div class="row-of-books">
-                <?php
-                foreach ($office_supplies_staplers as $officesupply) {
-                    ?>
-                    <a href="bookdetails.html" class="book-link">
+                <?php foreach (array_slice($office_supplies, 20, 5) as $officesupply): ?>
+                    <a href="officesupplydetails.php?id=<?php echo htmlspecialchars($officesupply["SupplyId"]); ?>" class="book-link">
                         <div class="book-container">
-                            <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
-                            <h2><?php echo $officesupply["Brand"]; ?></h2>
-                            <p><?php echo $officesupply["Name"]; ?></p>
-                            <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                            <img src="Images/<?php echo htmlspecialchars($officesupply["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                            <h2><?php echo htmlspecialchars($officesupply["Name"]); ?></h2>
+                            <p><?php echo htmlspecialchars($officesupply["Brand"]); ?></p>
+                            <p><?php echo '$' . htmlspecialchars($officesupply["Price"]); ?></p>
                         </div>
                     </a>
-                    <?php
-                }
-                ?>
+                <?php endforeach; ?>
             </div>
 
             <h2>Notebooks and Paper</h2>
             <!-- Display Office Supplies -->
             <div class="row-of-books">
-                <?php
-                foreach ($office_supplies_notebooks as $officesupply) {
-                    ?>
-                    <a href="bookdetails.html" class="book-link">
+                <?php foreach (array_slice($office_supplies, 8, 5) as $officesupply): ?>
+                    <a href="officesupplydetails.php?id=<?php echo htmlspecialchars($officesupply["SupplyId"]); ?>" class="book-link">
                         <div class="book-container">
-                            <img src="Images/<?php echo $officesupply["PhotoFilePath"]; ?>" alt="Book Cover" class="book-cover">
-                            <h2><?php echo $officesupply["Brand"]; ?></h2>
-                            <p><?php echo $officesupply["Name"]; ?></p>
-                            <p><?php echo '$' . $officesupply["Price"]; ?></p>
+                            <img src="Images/<?php echo htmlspecialchars($officesupply["PhotoFilePath"]); ?>" alt="Book Cover" class="book-cover">
+                            <h2><?php echo htmlspecialchars($officesupply["Name"]); ?></h2>
+                            <p><?php echo htmlspecialchars($officesupply["Brand"]); ?></p>
+                            <p><?php echo '$' . htmlspecialchars($officesupply["Price"]); ?></p>
                         </div>
                     </a>
-                    <?php
-                }
-                ?>
+                <?php endforeach; ?>
             </div>
         </div>
 

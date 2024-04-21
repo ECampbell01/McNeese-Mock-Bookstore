@@ -15,10 +15,10 @@ Created On: 3/28/2024
 .cart{
     position: fixed;
     top: 0;
-    left:calc(100% - 500px); 
-    /*left: 100%; */
+    left:calc(100% - 500px);
+    /*left: 100%;*/
     width: 500px;
-    background-color:beige;
+    background-color:darkolivegreen;
     height: 100vh;
     transition: 0.5s;
 }
@@ -56,10 +56,10 @@ Created On: 3/28/2024
     background-color: saddlebrown;
     color: #ffffff;
 }
-
-/*.active .cartCard{
+/*
+.active .cartCard{
     left:calc(100% - 500px);
-} */
+}*/
 
 .cart li{
     display: grid;

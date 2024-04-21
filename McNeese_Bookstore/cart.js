@@ -1,9 +1,3 @@
-/*
-Javascript file for the cart
-Author: Jett Rogers
-Created On: 3/28/2024
-*/
-
 let openShopping = document.querySelector('.cart-button')
 let closeShopping = document.querySelector('.closeCart')
 let list = document.querySelector('.list')

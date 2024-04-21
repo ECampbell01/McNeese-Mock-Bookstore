@@ -26,6 +26,7 @@
             }
 
             .search-input-container {
+                position: relative; /* Position relative for absolute positioning */
                 display: flex;
                 align-items: center;
             }
@@ -35,15 +36,17 @@
                 padding: 10px;
                 box-sizing: border-box;
                 border-radius: 30px;
-                margin-right: 5px; /* Add some spacing between input and button */
+                margin-right: 0px; /* Add some spacing between input and button */
             }
 
             .search-icon {
                 cursor: pointer;
+                position: absolute; /* Position absolute to place it inside the input container */
+                right: 10px; /* Adjust the positioning as needed */
                 width: 20px;
                 height: 20px;
-                background: url('Images/MagnifyingGlass.png') no-repeat center center; 
-                background-size: contain; 
+                background: url('Images/MagnifyingGlass.png') no-repeat center center;
+                background-size: contain;
                 border: none; /* Remove default button styles */
                 padding: 0; /* Remove default padding */
                 text-indent: -9999px; /* Move the text off-screen */
@@ -60,7 +63,7 @@
                 <form action="search.php" method="POST">
                     <div class="search-input-container">
                         <input type="text" name="search" class="search-input" placeholder="Enter Title, ISBN, Author, or Product Name">
-                        <input type="submit" name="submit" value="Search" class="search-icon">
+                        <button type="submit" name="submit" class="search-icon"></button>
                     </div>
                 </form>
             </div>
