@@ -1,5 +1,5 @@
 <!--
-    HTML file for the McNeese Bookstore Cart function
+    PHP file for the McNeese Bookstore Cart
     Author: Jett Rogers
     Created On: 3/28/2024
 -->
@@ -12,35 +12,40 @@
         <title>Bookstore Cart</title>
         <link rel="stylesheet" href="Cart.css"> <!--Link to CSS file-->
     </head>
+    <body> 
+        <?php
+            include("connectdatabase.php");
 
-    <body>
-        
+            // Assume the customer ID is 1 for now
+            $customer_id = 1;
 
+            // Query to get cart information
+            $query = "SELECT Book.Title, Book.Author, Book.Price, Cart.TotalCost 
+                    FROM Cart 
+                    INNER JOIN Book ON Cart.BookId = Book.BookId 
+                    WHERE Cart.CustomerId = ?";
+            $statement = $conn->prepare($query);
+            $statement->bind_param("i", $customer_id);
+            $statement->execute();
+            $result = $statement->get_result();
+            $total_cost = 0;
 
-        <div class="cart">
-            <h1>Cart</h1>
-            <p class="item">
-            <?php
-                $sql_cart = "SELECT BookId, SupplyId, TotalCost FROM Cart"; 
-                $result = mysqli_query($conn, $sql_cart);
-                if (mysqli_num_rows($result) > 0) 
-                {
-                    while ($row = mysqli_fetch_assoc($result)) 
-                    {
-                        $items[] = $row;
-                    }
+            // Check if cart is empty
+            if ($result->num_rows === 0) {
+                echo "<p>Your cart is empty.</p>";
+            } else {
+                // Display cart items
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>Title: " . htmlspecialchars($row["Title"]) . "</p>";
+                    echo "<p>Author: " . htmlspecialchars($row["Author"]) . "</p>";
+                    echo "<p>Price: $" . htmlspecialchars($row["Price"]) . "</p>";
+                    echo "<hr>";
+                    // Keep track of total cost for each item
+                    $total_cost += $row["TotalCost"];
                 }
-
-                foreach($items as $item):
-
-                endforeach;
-            ?>
-            <div class="checkout">
-                <div class="total">0</div>
-                <div class="closeCart">Checkout</div>
-            </div>
-        </div>
-
-        <script src="Cart.js"></script>
+                // Display total cost
+                echo "<p><strong>Total Cost: $" . htmlspecialchars($total_cost) . "</strong></p>";
+            }
+        ?>
     </body>
 </html>

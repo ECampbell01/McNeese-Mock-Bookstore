@@ -75,8 +75,9 @@
                 <p>Author: <?php echo htmlspecialchars($book["Author"]); ?></p>
                 <p>Price: $<?php echo htmlspecialchars($book["Price"]); ?></p>
                 <!-- Add to Cart button -->
-                <form action="add_to_cart.php" method="post">
+                <form action="addtocart.php" method="post">
                     <input type="hidden" name="book_id" value="<?php echo htmlspecialchars($book["BookId"]); ?>">
+                    <input type="hidden" name="price" value="<?php echo htmlspecialchars($book["Price"]); ?>">
                     <input type="submit" value="Add to Cart" class="add-to-cart">
                 </form>
             </div>
