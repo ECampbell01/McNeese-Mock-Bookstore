@@ -66,8 +66,9 @@
                             <?php
                                 echo "<p>$" . htmlspecialchars($row["Price"]) . "</p>";
                             ?>
-                            <form action="delete.php">
+                            <form action="delete.php" method="post">
                                 <input type="hidden" name="productId" value="<?php echo $row['BookId']; ?>">
+                                <input type="hidden" name="customerId" value="<?php echo $customer_id; ?>">
                                 <input type="submit" name="delete" class="deleteBTN" value="X" onClick="javascript:history.go(-1)">
                             </form>
                         </div>
@@ -89,9 +90,10 @@
                             <?php
                                 echo "<p>$" . htmlspecialchars($row["Price"]) . "</p>";
                             ?>
-                            <form action="delete.php">
+                            <form action="deleteOffSup.php" method="post">
                                 <input type="hidden" name="productId" value="<?php echo $row['SupplyId']; ?>">
-                                <input type="submit" name="delete" class="deleteBTN" value="X" onClick="javascript:history.go(-1)">
+                                <input type="hidden" name="customerId" value="<?php echo $customer_id; ?>">
+                                <input type="submit" name="delete" class="deleteBTN" value="X">
                             </form>
                         </div>
                         <?php

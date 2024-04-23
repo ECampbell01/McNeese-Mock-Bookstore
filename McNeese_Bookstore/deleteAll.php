@@ -10,7 +10,7 @@
 
         $office_supply_id = $_POST['customerId'];
 
-        $query = "DELETE FROM cart WHERE `cart`.`CustomerId` = ?";
+        $query = "DELETE FROM Cart WHERE `cart`.`CustomerId` = ?";
         $statement = $conn->prepare($query);
         $statement->bind_param("i", $customerId);
 
