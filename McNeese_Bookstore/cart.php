@@ -47,6 +47,8 @@
                 $statement->execute();
                 $officeSupplyResult = $statement->get_result();
 
+                $count = 0;
+
                 // Check if cart is empty
                 if ($bookResult->num_rows === 0 && $officeSupplyResult->num_rows === 0) {
                     echo "<p>Your cart is empty.</p>";
@@ -72,6 +74,7 @@
                         <?php
                         // Keep track of total cost for each item
                         $total_cost += $row["TotalCost"];
+                        $count += 1;
                     }
 
                     while ($row = $officeSupplyResult->fetch_assoc()) {
@@ -94,16 +97,24 @@
                         <?php
                         // Keep track of total cost for each item
                         $total_cost += $row["TotalCost"];
+                        $count += 1;
                     }
 
-                    // Display total cost
-                    echo "<hr><p><strong>Total Cost: $" . htmlspecialchars($total_cost) . "</strong></p>";
-                    ?>
-                    <button id="checkout">Checkout</button>
-        </div>            
-                <?php
-                }
-                include("footer.html"); //Display footer
+                // Display total cost
+                echo "<hr><p><strong>Total Cost: $" . htmlspecialchars($total_cost) . "</strong></p>";
+
             ?>
+
+            <form action="checkout.php" method="post">
+                <input type="hidden" name="total" value="<?php echo $total_cost; ?>">
+                <input type="hidden" name="count" value="<?php echo $count; ?>">
+                <input type="submit" value="Checkout" class="checkout">
+            </form>
+        </div>   
+
+        <?php
+            }
+            include("footer.html"); //Display footer
+        ?>
     </body>
 </html>
