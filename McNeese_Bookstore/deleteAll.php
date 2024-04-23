@@ -8,7 +8,7 @@
 
     if(isset($_POST['customerId'])) {
 
-        $office_supply_id = $_POST['customerId'];
+        $customerId = $_POST['customerId'];
 
         $query = "DELETE FROM Cart WHERE `cart`.`CustomerId` = ?";
         $statement = $conn->prepare($query);
@@ -17,14 +17,13 @@
 
         if ($statement->execute()) {
             // Items successfully removed
-            echo "<script>alert('Item successfully removed.');</script>";
+            echo "<script>alert('Items successfully removed.');</script>";
             include("index.php");
             } else {
                 // Error removing Item
                 echo "<script>alert('Error removing item. Please try again.');</script>";
                 include("index.php");
         }
-        
         
     } 
     else {
