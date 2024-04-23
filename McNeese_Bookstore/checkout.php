@@ -13,9 +13,9 @@
         <link rel="stylesheet" href="checkout.css"> <!--Link to CSS file-->
     </head>
     <body> 
-
+    
     <?php
-        include("connectdatabase.php");
+        /*include("connectdatabase.php");
         $query ="SELECT * FROM cart WHERE CustomerId=?";
         $query->bind_param("i", $customerId);
 
@@ -23,10 +23,12 @@
         {
             // Return the number of rows in result set
             $rowcount=mysqli_num_rows($result);
-        }
+        }*/
     ?>
 
-
+    <?php
+        include("header.html");
+    ?>
 
     <div class="checkout">
         <h2>Checkout Form</h2>
@@ -96,14 +98,16 @@
             </div>
             <div class="col25">
                 <div class="container">
-                <h4>Cart <span class="price" style="color:black"> <b><?php echo $rowcount;?></b></span></h4>
-                <hr>
-                <p>Total <span class="price" style="color:black"><b><?php echo $totalCost;?></b></span></p>
+                    <?php
+                        $count = $_POST['count'];
+                        $total = $_POST['total'];
+                    ?>
+                    <h2>Cart <span class="price" style="color:black"> <b><?php echo $count;?></b></span></h2>
+                    <hr>
+                    <h3>Total <span class="price" style="color:black"><b>$<?php echo $total;?></b></span></h3>
                 </div>
             </div>
     </div>
-
-    
         
     </body>
     <?php
