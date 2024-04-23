@@ -70,7 +70,8 @@
 
                     <!-- Add to Cart button -->
                     <form action="addtocartOffSup.php" method="post">
-                        <input type="hidden" name="book_id" value="<?php echo htmlspecialchars($office_supply["SupplyId"]); ?>">
+                        <input type="hidden" name="price" value="<?php echo htmlspecialchars($office_supply["Price"]); ?>">
+                        <input type="hidden" name="office_supply_id" value="<?php echo htmlspecialchars($office_supply["SupplyId"]); ?>">
                         <input type="submit" value="Add to Cart" class="add-to-cart">
                     </form>
                 </div>
