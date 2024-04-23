@@ -23,7 +23,15 @@
         
         if(mysqli_stmt_execute($stmt))
         {
-            header("Location: localhost/McNeese_Bookstore/#");
+            session_start();
+            $_SESSION['loggedin'] = true;
+            echo '<script>alert("Welcome"); window.location.href = "index.php";</script>';
+            exit;
+        }
+        else{
+            echo '<script>alert("Incorrect Email or Password. Please try again.");</script>';
+            echo '<script>window.location.href = "signin.html";</script>';
+            exit;
         }
     }
 ?>
