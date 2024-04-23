@@ -18,14 +18,22 @@
             include("connectdatabase.php");
         ?>
         <div class="cart">
-            <div class="header">
-                <h1>Shopping Cart</h1>
-                <h3>Price</h3>
-            </div>
-            <hr>
+
             <?php
                 // Assume the customer ID is 1 for now
                 $customer_id = 1;
+            ?>
+            
+            <div class="header">
+                <h1>Shopping Cart</h1>
+                <h3>Price</h3>
+                <form action="deleteAll.php" method="post">
+                    <input type="hidden" name="customerId" value="<?php echo $customer_id; ?>">
+                    <input type="submit" class="removeAll" value="Remove All">
+                </form>
+            </div>
+            <hr>
+            <?php
 
                 // Query to get cart information
                 $query = "SELECT Book.BookId, Book.Title, Book.Author, Book.Price, Cart.TotalCost 
