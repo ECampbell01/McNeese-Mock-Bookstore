@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
         //display search results
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='search-results'>
-                <h3>".$row['Title']."</h3>
+                <h3><a href='bookdetails.php?id=".$row['BookId']."'>".$row['Title']."</a></h3>
                 <p>".$row['Author']."</p>
             </div>";
         }
