@@ -40,7 +40,6 @@
                 height: 400px;
             }
         </style>
-        <script src="navbar.js" defer></script>
     </head>
     <body>
 
@@ -49,7 +48,7 @@
             include("header.html");
             include("connectdatabase.php");
 
-            // Retrieve the book ID from the query parameters
+            // Retrieve the book id
             $book_id = $_GET['id'];
 
             // Query the database to get the details of the selected book
@@ -74,6 +73,7 @@
                 <h2><?php echo htmlspecialchars($book["Title"]); ?></h2>
                 <p>Author: <?php echo htmlspecialchars($book["Author"]); ?></p>
                 <p>Price: $<?php echo htmlspecialchars($book["Price"]); ?></p>
+
                 <!-- Add to Cart button -->
                 <form action="addtocart.php" method="post">
                     <input type="hidden" name="book_id" value="<?php echo htmlspecialchars($book["BookId"]); ?>">
@@ -83,7 +83,8 @@
             </div>
         </div>
         <?php
-            } else {
+            } 
+            else {
                 // Book details not found, display an error message
                 echo "<p>Book details not found.</p>";
             }

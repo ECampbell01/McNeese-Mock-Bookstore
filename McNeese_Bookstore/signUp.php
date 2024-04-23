@@ -1,3 +1,9 @@
+<!--
+    PHP file for the sign up function
+    Author: Jett Rogers
+    Created On: 4/21/2024
+-->
+
 <?php 
     include("connectdatabase.php");
 

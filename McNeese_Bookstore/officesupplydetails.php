@@ -42,7 +42,7 @@
         include("header.html");
         include("connectdatabase.php");
 
-        // Retrieve the office supply ID from the query parameters
+        // Retrieve the office supply id
         $office_supply_id = $_GET['id'];
 
         // Query the database to get the details of the selected office supply
@@ -67,9 +67,10 @@
                     <h2><?php echo htmlspecialchars($office_supply["Name"]); ?></h2>
                     <p>Brand: <?php echo htmlspecialchars($office_supply["Brand"]); ?></p>
                     <p>Price: $<?php echo htmlspecialchars($office_supply["Price"]); ?></p>
+
                     <!-- Add to Cart button -->
-                    <form action="add_to_cart.php" method="post">
-                        <input type="hidden" name="book_id" value="<?php echo htmlspecialchars($book["BookId"]); ?>">
+                    <form action="addtocartOffSup.php" method="post">
+                        <input type="hidden" name="book_id" value="<?php echo htmlspecialchars($office_supply["SupplyId"]); ?>">
                         <input type="submit" value="Add to Cart" class="add-to-cart">
                     </form>
                 </div>

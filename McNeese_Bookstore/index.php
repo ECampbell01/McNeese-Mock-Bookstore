@@ -5,6 +5,6 @@
     Created On: 3/4/2024
 */
     include("header.html"); //display header
-    include("body.php"); //display body
+    include("homepage.php"); //display home page
     include("footer.html"); //display footer
 ?>

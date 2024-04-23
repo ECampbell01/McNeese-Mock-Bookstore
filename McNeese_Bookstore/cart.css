@@ -3,7 +3,7 @@ CSS stylesheet for McNeese Online bookstore cart
 Author: Jett Rogers
 Created On: 3/28/2024
 */
-body{
+body {
   width: 100%;
 }
 
@@ -18,26 +18,26 @@ body{
   background-color: #f9f9f9;
 }
 
-.header{
+.header {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
   align-items: center;
 }
 
-.item{
+.item {
   align-items: center;
   display: grid;
   grid-template-columns: 3fr 1fr 1fr
 }
 
-.removeItem{
+.removeItem {
   width: 25px;
 }
 
-#checkout{
+#checkout {
   width: 15%;
 }
 
-.info{
+.info {
   display: block;
 }

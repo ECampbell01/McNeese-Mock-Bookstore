@@ -57,12 +57,12 @@
                         <div class="item">
                             <div class="info">
                                 <?php
-                                echo "<p>Title: " . htmlspecialchars($row["Title"]) . "</p>";
-                                echo "<p>Author: " . htmlspecialchars($row["Author"]) . "</p>";
+                                    echo "<p>Title: " . htmlspecialchars($row["Title"]) . "</p>";
+                                    echo "<p>Author: " . htmlspecialchars($row["Author"]) . "</p>";
                                 ?>
                             </div>
                             <?php
-                            echo "<p>$" . htmlspecialchars($row["Price"]) . "</p>";
+                                echo "<p>$" . htmlspecialchars($row["Price"]) . "</p>";
                             ?>
                             <form action="delete.php">
                                 <input type="hidden" name="productId" value="<?php echo $row['BookId']; ?>">
@@ -79,12 +79,12 @@
                         <div class="item">
                             <div class="info">
                                 <?php
-                                echo "<p>Item: " . htmlspecialchars($row["Name"]) . "</p>";
-                                echo "<p>Brand: " . htmlspecialchars($row["Brand"]) . "</p>";
+                                    echo "<p>Item: " . htmlspecialchars($row["Name"]) . "</p>";
+                                    echo "<p>Brand: " . htmlspecialchars($row["Brand"]) . "</p>";
                                 ?>
                             </div>
                             <?php
-                            echo "<p>$" . htmlspecialchars($row["Price"]) . "</p>";
+                                echo "<p>$" . htmlspecialchars($row["Price"]) . "</p>";
                             ?>
                             <form action="delete.php">
                                 <input type="hidden" name="productId" value="<?php echo $row['SupplyId']; ?>">
@@ -105,7 +105,5 @@
                 }
                 include("footer.html"); //Display footer
             ?>
-        
-        <script src="navbar.js" defer></script>
     </body>
 </html>
