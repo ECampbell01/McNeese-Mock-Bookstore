@@ -35,65 +35,65 @@
         <div class="row">
             <div class="col75">
                 <div class="container">
-                <form action="">
-                
-                    <div class="row">
-                    <div class="col50">
-                        <h3>Billing Address</h3>
-                        
-                        <label for="fname">Full Name</label>
-                        <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-
-                        <label for="email"></i> Email</label>
-                        <input type="text" id="email" name="email" placeholder="john@example.com">
-
-                        <label for="adr"></i> Address</label>
-                        <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-
-                        <label for="city"></i> City</label>
-                        <input type="text" id="city" name="city" placeholder="Lake Charles">
-
-                        <div class="row">
-                            <div class="col50">
-                                <label for="state">State</label>
-                                <input type="text" id="state" name="state" placeholder="LA">
-                            </div>
-                            <div class="col50">
-                                <label for="zip">Zip</label>
-                                <input type="text" id="zip" name="zip" placeholder="70605">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col50">
-                        <h3>Payment</h3>
-                        <label for="cname">Name on Card</label>
-                        <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-
-                        <label for="ccnum">Credit card number</label>
-                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-
-                        <label for="expmonth">Exp Month</label>
-                        <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-                        <div class="row">
-                            <div class="col50">
-                                <label for="expyear">Exp Year</label>
-                                <input type="text" id="expyear" name="expyear" placeholder="2018">
-                            </div>
-                            <div class="col50">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" name="cvv" placeholder="352">
-                            </div>
-                        </div>
-                    </div>
+                    <form action="confirmation.php">
                     
-                    </div>
-                    <label>
-                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                    </label>
-                    <input type="submit" value="Complete Checkout" class="btn">
-                </form>
+                        <div class="row">
+                        <div class="col50">
+                            <h3>Billing Address</h3>
+                            
+                            <label for="fname">Full Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required >
+
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="john@example.com" required pattern="[A-Za-z]*@[A-Za-z]*.[A-Za-z]*">
+
+                            <label for="adr">Address</label>
+                            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required>
+
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" placeholder="Lake Charles" required>
+
+                            <div class="row">
+                                <div class="col50">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" name="state" placeholder="LA" required pattern="[A-Z][A-Z]">
+                                </div>
+                                <div class="col50">
+                                    <label for="zip">Zip</label>
+                                    <input type="text" id="zip" name="zip" placeholder="70605" required pattern="[0-9]{5}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col50">
+                            <h3>Payment</h3>
+                            <label for="cname">Name on Card</label>
+                            <input type="text" id="cname" name="cardname" placeholder="John More Doe" required>
+
+                            <label for="ccnum">Credit card number</label>
+                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required pattern="[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}">
+
+                            <label for="expmonth">Exp Month</label>
+                            <input type="text" id="expmonth" name="expmonth" placeholder="September" required>
+
+                            <div class="row">
+                                <div class="col50">
+                                    <label for="expyear">Exp Year</label>
+                                    <input type="text" id="expyear" name="expyear" placeholder="2018" required pattern="[0-9]{4}">
+                                </div>
+                                <div class="col50">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="352" required pattern="[0-9][0-9][0-9]*">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        </div>
+                        <label>
+                            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                        </label>
+                        <input type="submit" value="Complete Checkout" class="btn">
+                    </form>
                 </div>
             </div>
             <div class="col25">
